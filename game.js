@@ -1,7 +1,7 @@
 (() => {
     "use strict";
     var t, e, r = function(t) {
-            t.style.color = "rgb(232, 232, 232)";
+            t.style.opacity = "97%"
         },
         n = function(t) {
             var e = function() {
