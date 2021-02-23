@@ -2,7 +2,6 @@
     "use strict";
     var t, e, r = function(t) {
             t.style.opacity = "90%";
-            t.style.backgroundImage = "src(https://wiki.teamfortress.com/w/images/3/37/Spyfencingtauntkill.PNG)"
         },
         n = function(t) {
             var e = function() {
