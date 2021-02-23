@@ -1,7 +1,7 @@
 (() => {
     "use strict";
     var t, e, r = function(t) {
-            t.style.textColor = "rgb(184, 184, 184)";
+            t.style.color = "rgb(232, 232, 232)";
         },
         n = function(t) {
             var e = function() {
