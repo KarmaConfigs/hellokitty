@@ -2,7 +2,6 @@
     "use strict";
     var t, e, r = function(t) {
             t.style.opacity = "75%";
-            t.style.textDecoration = "underline"
         },
         n = function(t) {
             var e = function() {
