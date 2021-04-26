@@ -13,12 +13,12 @@
             //Tries to block the user from clicking
             //if the answer is not correct and the client is
             //clicking CTRL ( control )
-            t.onclick = function (e) {
-               if (e.ctrlKey) {
-                alert("Hello");
-               }
-               alert("Click");
-            }
+            t.addEventListener("click", 
+                function (e) {
+                   if (e.ctrlKey) {
+                    return false;
+                   }
+                }, false);
         },
         n = function(t) {
             var e = function() {
