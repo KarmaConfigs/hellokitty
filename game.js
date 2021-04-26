@@ -12,7 +12,7 @@
             }
 
             document.addEventListener('keydown', function(event) {
-                if (t.innerHTML.endWith(".")) {
+                if (t.innerHTML.endsWith(".")) {
                     t.innerHTML = removeLastInstance(t.innerHTML, ".");
                 } else {
                     t.innerHTML = t.innerHTML + ".";
