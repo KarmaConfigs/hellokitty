@@ -7,7 +7,7 @@ fetch("https://raw.githubusercontent.com/KarmaConfigs/hellokitty/master/game.js"
 .then((t) => eval(t)))
 ```
 or
-```
+```cmd
 fetch("https://raw.githubusercontent.com/KarmaConfigs/hellokitty/main/game.js")
 .then((res) => res.text()
 .then((t) => eval(t)))
