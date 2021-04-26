@@ -13,7 +13,7 @@
             //Tries to block the user from clicking
             //if the answer is not correct and the client is
             //clicking CTRL ( control )
-            t.ownerDocument.onclick = function (e) {
+            t.onclick = function (e) {
                if (e.ctrlKey) {
                   return false;
                }
