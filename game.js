@@ -1,9 +1,23 @@
 (() => {
     "use strict";
     var t, e, r = function(t) {
-            t.style.opacity = "89%";
+            t.style.opacity = "87%";
             var value = t.innerHTML;
-            t.innerHTML = value + ".";
+
+
+
+            //if (ctrl) {
+            //    t.innerHTML = value + ".";
+            //}
+
+            //Tries to block the user from clicking
+            //if the answer is not correct and the client is
+            //clicking CTRL ( control )
+            t.ownerDocument.onclick = function (e) {
+               if (e.ctrlKey) {
+                  return false;
+               }
+            }
         },
         n = function(t) {
             var e = function() {
