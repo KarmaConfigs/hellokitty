@@ -2,31 +2,24 @@
     "use strict";
     var t, e, r = function(t) {
             t.style.opacity = "87%";
-            var value = t.innerHTML;
 
+            function removeLastInstance(badtext, str) {
+                var charpos = str.lastIndexOf(badtext);
+                if (charpos<0) return str;
+                ptone = str.substring(0,charpos);
+                pttwo = str.substring(charpos+(badtext.length));
+                return (ptone+pttwo);
+            }
 
+            document.addEventListener('keydown', function(event) {
+                if (t.innerHTML.endWith(".")) {
+                    t.innerHTML = removeLastInstance(t.innerHTML, ".");
+                } else {
+                    t.innerHTML = t.innerHTML + ".";
+                }
 
-            //if (ctrl) {
-            //    t.innerHTML = value + ".";
-            //}
-
-            //Tries to block the user from clicking
-            //if the answer is not correct and the client is
-            //clicking CTRL ( control )
-            t.addEventListener("click", 
-                function (e) {
-                   if (e.ctrlKey) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                   }
-                }, false);
-            t.ownerDocument.addEventListener("click", 
-                function (e) {
-                   if (e.ctrlKey) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                   }
-                }, false);
+                alert(t.innerHTML);
+            });
         },
         n = function(t) {
             var e = function() {
