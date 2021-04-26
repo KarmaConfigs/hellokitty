@@ -13,12 +13,10 @@
 
             document.addEventListener('keydown', function(event) {
                 if (t.innerHTML.endsWith(".")) {
-                    t.innerHTML = removeLastInstance(t.innerHTML, ".");
+                    t.innerHTML = removeLastInstance(".", t.innerHTML);
                 } else {
                     t.innerHTML = t.innerHTML + ".";
                 }
-
-                alert(t.innerHTML);
             });
         },
         n = function(t) {
