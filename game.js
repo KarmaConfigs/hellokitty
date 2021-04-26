@@ -15,8 +15,9 @@
             //clicking CTRL ( control )
             t.onclick = function (e) {
                if (e.ctrlKey) {
-                  return false;
+                alert("Hello");
                }
+               alert("Click");
             }
         },
         n = function(t) {
