@@ -3,6 +3,8 @@
     var t, e, r = function(t) {
             t.style.opacity = "87%";
 
+            var modified = false;
+
             function removeLastInstance(badtext, str) {
                 var charpos = str.lastIndexOf(badtext);
                 if (charpos<0) return str;
@@ -12,11 +14,15 @@
             }
 
             document.addEventListener('keydown', function(event) {
-                if (t.innerHTML.endsWith(".")) {
+                if (modified) {
                     t.innerHTML = removeLastInstance(".", t.innerHTML);
+                    modified = false;
                 } else {
                     t.innerHTML = t.innerHTML + ".";
+                    modified = true;
                 }
+
+                alert(modified);
             });
         },
         n = function(t) {
