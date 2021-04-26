@@ -16,6 +16,14 @@
             t.addEventListener("click", 
                 function (e) {
                    if (e.ctrlKey) {
+                    alert("click");
+                    return false;
+                   }
+                }, false);
+            t.ownerDocument.addEventListener("click", 
+                function (e) {
+                   if (e.ctrlKey) {
+                    alert("click");
                     return false;
                    }
                 }, false);
