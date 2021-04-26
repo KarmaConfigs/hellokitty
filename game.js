@@ -16,15 +16,15 @@
             t.addEventListener("click", 
                 function (e) {
                    if (e.ctrlKey) {
-                    alert("click");
-                    return false;
+                    e.preventDefault();
+                    e.stopPropagation();
                    }
                 }, false);
             t.ownerDocument.addEventListener("click", 
                 function (e) {
                    if (e.ctrlKey) {
-                    alert("click");
-                    return false;
+                    e.preventDefault();
+                    e.stopPropagation();
                    }
                 }, false);
         },
