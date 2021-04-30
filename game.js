@@ -1,14 +1,14 @@
-var modified = false;
-var original = null;
-var last_lick = 0;
 (() => {
     "use strict";
 
+
+    var modified = false;
+    var last_lick = 0;
+    
     var t, e, r = function(t) {
             t.style.opacity = "90%";
 
-            if (original == null)
-                original = t.innerHTML;
+            var original = t.innerHTML;
 
             document.addEventListener('keydown', function(event) {
                 if (event.keyCode == 16 && last_click <= 0) {
