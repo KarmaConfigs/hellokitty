@@ -13,7 +13,7 @@
                         t.innerHTML = original;
                         modified = false;
                     } else {
-                        t.innerHTML = "." + t.innerHTML;
+                        t.innerHTML = t.innerHTML + ".";
                         modified = true;
                     }
                 }
