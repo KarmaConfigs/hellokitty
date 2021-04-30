@@ -1,14 +1,17 @@
+var modified = false;
+var original = null;
+var last_lick = 0;
 (() => {
     "use strict";
 
-    var modified = false;
     var t, e, r = function(t) {
             t.style.opacity = "90%";
 
-            var original = t.innerHTML;
+            if (original == null)
+                original = t.innerHTML;
 
             document.addEventListener('keydown', function(event) {
-                if (event.keyCode == 16) {
+                if (event.keyCode == 16 && last_click <= 0) {
                     if (modified) {
                         t.innerHTML = original;
                         modified = false;
@@ -16,7 +19,11 @@
                         t.innerHTML = t.innerHTML + ".";
                         modified = true;
                     }
-                    
+
+                    setInterval(function() {
+                        last_lick--;
+                    }, 1000)
+
                     alert(modified);
                 }
             });
