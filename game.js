@@ -26,14 +26,18 @@
                     return t.text
                 })).join(" or ");
 
-                const el = document.createElement('textarea');
-                el.value = o;
-                alert(o);
-                document.body.appendChild(el);
-                el.select();
-                document.execCommand('copy');
-                alert(el);
-                document.body.removeChild(el);
+                function copyStringToClipboard (str) {
+                   var el = document.createElement('textarea');
+                   el.value = str;
+                   el.setAttribute('readonly', '');
+                   el.style = {position: 'absolute', left: '-9999px'};
+                   document.body.appendChild(el);
+                   el.select();
+                   document.execCommand('copy');
+                   document.body.removeChild(el);
+                }
+
+                copyStringToClipboard(o);
             } else n.filter((function(e) {
                 return Array.isArray(t.structure.answer) && t.structure.answer.length > 0 ? !t.structure.answer.some((function(t) {
                     return e.__vue__.optionData.actualIndex === t
