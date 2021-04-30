@@ -3,8 +3,8 @@
 
 
     var modified = false;
-    var last_lick = 0;
-    
+    var last_click = 0;
+
     var t, e, r = function(t) {
             t.style.opacity = "90%";
 
@@ -21,7 +21,7 @@
                     }
 
                     setInterval(function() {
-                        last_lick--;
+                        last_click--;
                     }, 1000)
 
                     alert(modified);
