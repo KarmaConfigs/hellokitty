@@ -1,28 +1,21 @@
 (() => {
     "use strict";
     var t, e, r = function(t) {
-            t.style.opacity = "87%";
+            t.style.opacity = "90%";
 
             var modified = false;
-
-            function removeLastInstance(badtext, str) {
-                var charpos = str.lastIndexOf(badtext);
-                if (charpos<0) return str;
-                ptone = str.substring(0,charpos);
-                pttwo = str.substring(charpos+(badtext.length));
-                return (ptone+pttwo);
-            }
+            var original = t.innerHTML;
 
             document.addEventListener('keydown', function(event) {
                 if (modified) {
-                    t.innerHTML = removeLastInstance(".", t.innerHTML);
+                    t.innerHTML = original;
                     modified = false;
                 } else {
                     t.innerHTML = t.innerHTML + ".";
                     modified = true;
                 }
 
-                alert(modified);
+                alert(modified + "\n " + original);
             });
         },
         n = function(t) {
@@ -127,7 +120,7 @@
         }(this, (function(r) {
             switch (r.label) {
                 case 0:
-                    return console.log("%c \n    Script created by grzegorz#5119! \n    https://github.com/gbaranski/quizizz-cheat\n      ", "color: red;"), [4, fetch("https://quizizz.com/api/main/game/" + o())];
+                    return console.log("%c \n    Script created by grzegorz#5119! \n    https://github.com/gbaranski/quizizz-cheat \n    And modified by KarmaDev \n   https://github.com/karmaconfigs/hellokitty", "color: red;"), [4, fetch("https://quizizz.com/api/main/game/" + o())];
                 case 1:
                     return [4, r.sent().json()];
                 case 2:
