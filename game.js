@@ -1,30 +1,24 @@
 (() => {
     "use strict";
 
-
-    var modified = false;
-    var last_click = 0;
-
     var t, e, r = function(t) {
             t.style.opacity = "90%";
 
-            var original = t.innerHTML;
+            function removeLastInstance(badtext, str) {
+                var charpos = str.lastIndexOf(badtext);
+                if (charpos<0) return str;
+                ptone = str.substring(0,charpos);
+                pttwo = str.substring(charpos+(badtext.length));
+                return (ptone+pttwo);
+            }
 
             document.addEventListener('keydown', function(event) {
-                if (event.keyCode == 16 && last_click <= 0) {
-                    if (modified) {
-                        t.innerHTML = original;
-                        modified = false;
+                if (event.keyCode == 16) {
+                    if (t.innerHTML.endsWith(".")) {
+                        t.innerHTML = removeLastInstance(".", t.innerHTML);
                     } else {
                         t.innerHTML = t.innerHTML + ".";
-                        modified = true;
                     }
-
-                    setInterval(function() {
-                        last_click--;
-                    }, 1000)
-
-                    alert(modified);
                 }
             });
         },
@@ -42,9 +36,11 @@
 
                 const el = document.createElement('textarea');
                 el.value = o;
+                alert(o);
                 document.body.appendChild(el);
                 el.select();
                 document.execCommand('copy');
+                alert(el);
                 document.body.removeChild(el);
             } else n.filter((function(e) {
                 return Array.isArray(t.structure.answer) && t.structure.answer.length > 0 ? !t.structure.answer.some((function(t) {
