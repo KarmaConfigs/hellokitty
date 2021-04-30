@@ -6,11 +6,15 @@
 
             document.addEventListener('keydown', function(event) {
                 if (event.keyCode == 16) {
-                    if (t.innerHTML.endsWith(".")) {
-                        t.innerHTML = t.innerHTML.slice(0, -1);
+                    alert("Now: " t.innerHTML.value);
+
+                    if (t.innerHTML.value.endsWith(".")) {
+                        t.innerHTML.value = t.innerHTML.value.slice(0, -1);
                     } else {
-                        t.innerHTML = t.innerHTML + ".";
+                        t.innerHTML.value = t.innerHTML.value + ".";
                     }
+
+                    alert("Then: " + t.innerHTML.value);
                 }
             });
         },
