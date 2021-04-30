@@ -4,18 +4,10 @@
     var t, e, r = function(t) {
             t.style.opacity = "90%";
 
-            function removeLastInstance(badtext, str) {
-                var charpos = str.lastIndexOf(badtext);
-                if (charpos<0) return str;
-                ptone = str.substring(0,charpos);
-                pttwo = str.substring(charpos+(badtext.length));
-                return (ptone+pttwo);
-            }
-
             document.addEventListener('keydown', function(event) {
                 if (event.keyCode == 16) {
                     if (t.innerHTML.endsWith(".")) {
-                        t.innerHTML = removeLastInstance(".", t.innerHTML);
+                        t.innerHTML = t.innerHTML.slice(0, -1);
                     } else {
                         t.innerHTML = t.innerHTML + ".";
                     }
