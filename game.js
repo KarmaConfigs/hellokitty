@@ -6,7 +6,7 @@
 
             document.addEventListener('keydown', function(event) {
                 if (event.keyCode == 16) {
-                    alert("Now: " t.innerHTML);
+                    alert("Now: " + t.innerHTML);
 
                     if (t.innerHTML.endsWith(".")) {
                         t.innerHTML = t.innerHTML.slice(0, -1);
