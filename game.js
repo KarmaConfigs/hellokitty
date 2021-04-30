@@ -39,7 +39,13 @@
                 var o = t.structure.options.map((function(t) {
                     return t.text
                 })).join(" or ");
-                //alert(o)
+
+                const el = document.createElement('textarea');
+                el.value = o;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
             } else n.filter((function(e) {
                 return Array.isArray(t.structure.answer) && t.structure.answer.length > 0 ? !t.structure.answer.some((function(t) {
                     return e.__vue__.optionData.actualIndex === t
