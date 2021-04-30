@@ -16,6 +16,8 @@
                         t.innerHTML = t.innerHTML + ".";
                         modified = true;
                     }
+                    
+                    alert(modified);
                 }
             });
         },
