@@ -17,8 +17,6 @@
                         modified = true;
                     }
                 }
-
-                alert(modified);
             });
         },
         n = function(t) {
